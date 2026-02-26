@@ -193,3 +193,174 @@ footer{
     color: white;
     border-radius: 10%;
 }
+
+/* ===== BROWSE SECTION ===== */
+.browse-section {
+  background-color: #141414;
+  padding: 40px 0 60px 0;
+}
+
+.row-section {
+  margin-bottom: 40px;
+  padding: 0 60px;
+  position: relative;
+}
+
+.row-title {
+  color: #e5e5e5;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.row-title span {
+  color: #54b9c5;
+}
+
+.cards-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 80px; /* space for hover card expanding downward */
+}
+
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== INDIVIDUAL CARD ===== */
+.card {
+  min-width: 220px;
+  height: 124px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, z-index 0s;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* ===== HOVER CARD POPUP ===== */
+.card-hover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0.85);
+  width: 280px;
+  background-color: #181818;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  z-index: 100;
+  overflow: hidden;
+  transform-origin: top center;
+}
+
+.card:hover {
+  z-index: 200;
+}
+
+.card:hover .card-hover {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.25);
+  pointer-events: all;
+  top: -20px;
+}
+
+.preview-img {
+  width: 100%;
+  height: 155px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.preview-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(transparent, #181818);
+}
+
+.card-info {
+  padding: 10px 12px 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cb {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.cb:hover {
+  border-color: white;
+  transform: scale(1.1);
+}
+
+.cb.play {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.cb.play:hover {
+  background: #ddd;
+}
+
+.cb.more {
+  margin-left: auto;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #555;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #E50914;
+  border-radius: 2px;
+}
+
+.card-label {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.match {
+  color: #46d369;
+  font-size: 12px;
+  font-weight: 600;
+}
